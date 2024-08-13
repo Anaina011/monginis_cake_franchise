@@ -214,7 +214,7 @@
 @media (max-width: 767px) {
     .home_about_img img {
         padding-top: 4%;
-        width:70%;
+        width: 70%;
     }
 }
 
@@ -260,10 +260,10 @@
 
 .join_family_content h5 {
     font-size: 150%;
-font-family: "lobster", sans-serif;
-color: #eb268e;
-padding-bottom: 4%;
-padding-left: 9%;
+    font-family: "lobster", sans-serif;
+    color: #eb268e;
+    padding-bottom: 4%;
+    padding-left: 9%;
 }
 
 .join_family_content p {
@@ -302,11 +302,11 @@ padding-left: 9%;
         width: 70%;
     }
 
-    .join_family_img{
+    .join_family_img {
         display: none;
     }
 
-    .join_family_image{
+    .join_family_image {
         display: block;
     }
 
@@ -384,6 +384,7 @@ padding-left: 9%;
 .home_joinus h3 {
     color: #eb268e;
 }
+
 .legacy_section_image {
     width: 100%;
     height: auto;
@@ -414,7 +415,100 @@ padding-left: 9%;
     .home_count {
         justify-content: space-around;
     }
+
     .home_joinus {
-    padding-right: 5%;
+        padding-right: 5%;
+    }
 }
+
+
+/* home choose */
+.home_choose {
+    width: 100%;
+    height: auto;
+    padding-top: 4%;
+    padding-left: 13%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+}
+
+.home_choose_img {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0%;
+}
+
+.home_choose_img img {
+    width: 100%;
+}
+
+.home_choose_content {
+    background-color: #28286e;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_choose_content h4 {
+    color: #eb268e;
+    font-weight: bold;
+    font-size: 210%;
+    padding-bottom: 5%;
+}
+
+.home_choose_content p {
+    color: #fff;
+    width: 80%;
+    line-height: 220%;
+    text-align: center;
+}
+
+.home_choose_content .franchise_button {
+    padding-bottom: 8%;
+}
+
+@media (max-width: 1180px) {
+    .home_choose_content h4 {
+        font-size: 170%;
+    }
+
+    .home_choose_content p {
+        line-height: 180%;
+    }
+}
+
+@media (max-width: 991px) {
+    .home_choose_img {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3%;
+    }
+
+    .home_choose_img img {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home_choose_content h4 {
+        font-size: 150%;
+        padding-top: 5%;
+    }
+
+    .home_choose_content p {
+        font-size: 90%;
+    }
+
+    .home_choose_content .franchise_button {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+font-size: 80%;
+    }
+
+    .home_choose_img img {
+        width: 90%;
+    }
 }
