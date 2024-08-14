@@ -798,10 +798,6 @@
     grid-row: span 2;
 }
 
-.item-medium {
-    /* grid-column: span 2; */
-}
-
 .item-small {
     grid-column: span 1;
 }
