@@ -15,7 +15,7 @@
 
 /* Hero section */
 .hero_section {
-    background-image: url(../img/monginis_store.webp);
+    background-image: url(../img/monginis_hero.png);
     height: 80vh;
     background-size: cover;
     background-position: center;
@@ -676,9 +676,15 @@
     }
 }
 
+@media (max-width: 428px) {
+    .service_card_section {
+        padding-bottom: 80%;
+    }
+}
+
 @media (max-width: 400px) {
     .service_card_section {
-        padding-bottom: 85%;
+        padding-bottom: 100%;
     }
 
     .service_card {
@@ -699,7 +705,7 @@
 
 @media (max-width: 350px) {
     .service_card_section {
-        padding-bottom: 120%;
+        padding-bottom: 130%;
     }
 }
 
@@ -808,6 +814,7 @@
 
     .item-large {
         grid-row: span 1;
+        grid-column: span 2; /* Make large items span across two columns */
     }
 }
 
@@ -819,9 +826,9 @@
     .item-large,
     .item-small {
         grid-column: span 1;
+        grid-row: span 1;
     }
 }
-
 
 
 
