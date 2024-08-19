@@ -81,15 +81,15 @@ html {
 }
 
 .footer_container p {
-        font-size: 105%;
-        font-weight: 600;
+    font-size: 105%;
+    font-weight: 600;
 }
 
 @media (max-width: 991px) {
     .footer_container {
         padding: 4px 100px;
     }
-    
+
     .footer_open {
         display: flex;
         flex-direction: column;
@@ -116,11 +116,11 @@ html {
     .footer_container {
         padding: 4px 60px;
     }
-    
-.footer_logo img {
-    width: 30%;
-    padding-bottom: 3%;
-}
+
+    .footer_logo img {
+        width: 30%;
+        padding-bottom: 3%;
+    }
 
     .footer_open {
         padding-top: 2%;
@@ -147,10 +147,10 @@ html {
     .footer_container {
         padding: 4px 50px;
     }
-    
-.footer_logo img {
-    width: 40%;
-}
+
+    .footer_logo img {
+        width: 40%;
+    }
 
     .footer_open p {
         font-size: 90%;
@@ -250,3 +250,6 @@ html {
         margin-top: 20px;
     }
 } */
+
+
+
