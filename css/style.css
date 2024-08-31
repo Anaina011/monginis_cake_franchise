@@ -56,13 +56,14 @@
 /* Hero section */
 .hero_section {
     background-image: url(../img/monginis_hero.png);
-    height: 80vh;
+    height: max-content;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: white;
-    padding: 0 9rem;
+    padding: 3rem 9rem;
 }
 
 .hero_content h2 {
@@ -1393,4 +1394,12 @@
     .contact_banner_form p {
         background-color: #2CBBA3;
     }
+}
+
+
+
+
+
+.g-recaptcha{
+    overflow: hidden;
 }

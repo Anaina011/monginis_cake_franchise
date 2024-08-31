@@ -10,11 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Sanitize inputs
+    $applicationType = sanitizeInput($_POST['applicationType']);
+    $cityName = sanitizeInput($_POST['CityName']);
     $name = sanitizeInput($_POST['name']);
     $email = sanitizeInput($_POST['email']);
     $countryCode = sanitizeInput($_POST['countryCode']);
     $mobile = sanitizeInput($_POST['mobile']);
-    $address = sanitizeInput($_POST['address']);
+    $message = sanitizeInput($_POST['message']);
     $investment = sanitizeInput($_POST['investment']);
 
     // Check honeypot field (must be empty if the form is genuine)
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Spam detected.");
     }
 
-    // reCAPTCHA validation (Assuming you're using reCAPTCHA v2)
+    // reCAPTCHA validation
     $recaptchaSecret = '6LefECgqAAAAANbAb-KSugRx_qNhxz0XbIH-4bE-';
     $recaptchaResponse = $_POST['g-recaptcha-response'];
     $recaptchaUrl = 'https://www.google.com/recaptcha/api/siteverify';
@@ -36,15 +38,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Proceed with form processing
     $to = "support@monginisfranchises.org.in, shivamsundram125@gmail.com";
-    // $cc = "";
     $bcc = "edb@illforddigital.com";
-    $subject = "New Contact Form Submission";
-    $message = "Name: $name\nEmail: $email\nPhone: $countryCode $mobile\nAddress: $address\nInvestment: $investment";
-    $headers = "From: noreply@monginisfranchises.org.in";
-    // $headers .= "Cc: $cc\r\n";
+    $subject = "Monginis New Enquiry Form $name";
+    $messageBody = "Application Type: $applicationType\nCity Name: $cityName\nName: $name\nEmail: $email\nPhone: $countryCode $mobile\nMessage: $message\nInvestment: $investment";
+    $headers = "From: noreply@monginisfranchises.org.in\r\n";
     $headers .= "Bcc: $bcc\r\n";
 
-    if (mail($to, $subject, $message, $headers)) {
+    if (mail($to, $subject, $messageBody, $headers)) {
+        // Send auto-reply to the user
+        $userSubject = "Thank you for contacting Monginis";
+        $userMessage = "Dear $name,\n\nThank you for reaching out to us. We have received your enquiry and will get back to you shortly.\n\nBest Regards,\nMonginis Franchises Team";
+        $userHeaders = "From: noreply@monginisfranchises.org.in";
+
+        mail($email, $userSubject, $userMessage, $userHeaders);
+
         echo "<script>alert('Thank you! Your submission has been received.'); window.location.href = 'index.html';</script>";
     } else {
         echo "<script>alert('Sorry, there was an error sending your message. Please try again later.'); window.location.href = 'index.html';</script>";
